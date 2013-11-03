@@ -25,7 +25,7 @@ AttractionDemo = (function(_super) {
     attraction = new Attraction(this.mouse.pos, 1200, 1200);
     repulsion = new Attraction(this.mouse.pos, 200, -2000);
     collide = new Collision();
-    max = full ? 400 : 200;
+    max = full ? 12000 : 12000;
     _results = [];
     for (i = _i = 0; 0 <= max ? _i <= max : _i >= max; i = 0 <= max ? ++_i : --_i) {
       p = new Particle(Random(0.1, 3.0));
@@ -34,7 +34,7 @@ AttractionDemo = (function(_super) {
       p.behaviours.push(attraction);
       p.behaviours.push(repulsion);
       p.behaviours.push(bounds);
-      p.behaviours.push(collide);
+      // p.behaviours.push(collide);
       collide.pool.push(p);
       _results.push(this.physics.particles.push(p));
     }
